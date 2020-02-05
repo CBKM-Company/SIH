@@ -1,295 +1,214 @@
-<!doctype html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html>
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-  <title>Team-CBKM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIH 2020 | Documentation by CBKM</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
   <style>
-    body,
-    html {
-      height: 100%;
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    h1 {
-      margin: 30px;
-      color: crimson;
-      font-weight: bold;
-      text-align: center;
-      text-decoration-line: underline;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-    .bg1-image{
-      background-repeat:no-repeat;
-      background-size:contain;
-      background-position:center;
-    }
-
-    .bg-image {
-      width: 100%;
-  height: 100%;
-  background-repeat:no-repeat;
-  background-position:center;
-  background-size:contain;
-
-    }
-
-    /* Images used */
-    .img1 {
-      background-image: url('./i1.png');
-      width: 100%;
-      height: 100%;
-    } 
-
-    .img2 {
-      background-image: url('./i2.gif');
-    }
-
-    .img3 {
-      background-image: url('./i3.gif');
-    }
-
-    .img4 {
-      background-image: url('./i4.gif');
-    }
-
-    .img5 {
-      background-image: url('./i5.gif');
-    }
-
-    .img6 {
-      background-image: url('./i6.gif');
-    }
-
-
-
-    .img7 {
-      background-image: url('./i7.gif');
-    }
-
-    .img8 {
-      background-image: url('./i8.gif');
-    } 
-
-    .bg-text {
-      color: black;
-      font-weight: bold;
-      font-size: 18px;
+    body {
+      background: url('https://cdn.pixabay.com/photo/2018/07/14/11/33/network-3537401_960_720.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
     }
   </style>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145695653-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-145695653-2');
-</script>
-
-
 </head>
 
-<body> 
-  <div class="bg1-image img1">
-    <div class="bg-text">
-      <div class="container">
-        <h1>Snippets/Abstract</h1>
-        <p>Let me clear you one thing that no system can provide 100% security We
-          are trying to provide best possible.</p>
-
-        <ol> 
-          <li>Handling Patient’s report is
-            very difficult to manage like Long history from various different
-            hospitals , medical reports .And even prescriptions</li>
-          <li>It is even more
-            difficult to share between many medical practitioners</li>
-          <li>So we came up
-            with an idea to provide all access to these facility at one point
-            access . ie app</li>
-          <li>So we decided to Digitize the Health Record to EHR</li>
-          <li>Which bring ease of manageability and shareability </li>
-          <li>We believe in
-            making a trusted system where members are not trusting each other.</li>
-          <li>So BlockChain is the Solution.</li>
-        </ol>
-
-
-        <h1>Why BlockChain ?</h1>
-        <p>BlockChain gives power of ​ Immutability​ , Transparency​ , Accountability​ ,Security​ of transaction and
-          assets.
-          We are using private blockchain network
-          As we cannot risk keeping the record in public blockchain because anyone
-          can see the transaction . Although the data is Immutable but there will be
-          privacy issue
-          As BlockChain is ​ Immutable , ​ so no one can temper it and also the data is
-          cryptographically hashed , linked to each other and stored so it’s difficult
-          to decrypt it .
-        </p>
-
-        <h1>Why not the Cloud System ?</h1>
-        <p>Patient is very sensitive to his data and is not willing to share with anyone .
-          We need a Trusted authority like the government or local public hospitals .
-          Centralized third party will be worse in this case
-          Distributed Ledger Technology is the Solution .
-          Combination of DLT and Blockchain is FIRE
-          Even Distributed system is possible with clouds
-          So we are using it by EC2 instance and various d
-          ocker​ container for
-          virtualization ​ only​ f ​ or Development</p>
-
-
-        <h1>How do things work ?</h1>
-        <p>We are using Hyper-Ledger fabric build by Linux foundation
-          It helps in making public blockchain and various peers for RPC (Remote
-          procedure Calls)
-          As you can see in the first fig (Hyperledger Infrastructure )
-          We have 4 docker containers</p>
-
-        <ol>
-          <li>CA Server this provide public and private keys for every user and
-            manage its expiration and all other things .MSP (Membership Service
-            Provider )</li>
-          <li>Order : as the name suggest that it keeps the track of sequence of
-            transaction and we build it on KAFKA (it helps in making real time
-            streaming pipelines which is s ​ calable​ )</li>
-          <li>Peer : we are using at least 4 peers for development but it is more
-            scalable every peer is connected to its own DataBase</li>
-          <li>Couch DB :- this is what the hyperledger uses to store unstructured
-            data . And deep down It uses LevelDB</li>
-          <li>Client Peer is to provide RPC to client request</li>
-          <li>Endorser peer​ checks the Certificate details and others to validate
-            the transaction.</li>
-          <li>Anchor peer​ receives updates and broadcasts the updates to the
-            other ​ peers​ in the organization. As Anchor peer is discoverable so
-            we can communicate to other organization by GOSSIP protocol</li>
-          <li>There are two more folder C
-            onfig ​ folder stores all the channel and
-            peer configuration and ​ Crypto f ​ older stores all the crypto material
-            like digital certificates</li>
-        </ol>
-
-        <h1>Tech-Stack</h1>
-        <h4>We are having vast techstack so we have divided it into 4 main sections</h4>
-
-        <ol>
-          <li>We are using GoLang as hyperledger fabric is build using it to make
-            consensus algorithm</li>
-          <li>Yamal (yml ) file are used to config channel ,transaction and genesis
-            blocks</li>
-          <li>CouchDB & LevelDBare databases and levelDB works on low level
-            format</li>
-          <li>Rest Server it governs all the processes</li>
-          <li>We are building it using Nodejs ,with express for REST API calls and
-            Passport for authentication with aadhar (if possible ) or Phone no. or
-            Google</li>
-          <li>MongoDB as Database to store various assets</li>
-          <li>ML Services​ we are also providing report analysis, chatbot
-            ,recommendation system etc . where we are in need for all this
-            libraries</li>
-          <li>Coming to the front end part we are providing end points website and
-            app</li>
-          <li>We are Using react for faster building and native application
-            HTML CSS JS are basics and cordova/phonegap for android
-            development</li>
-          <li>Hosting is done on ​ EC2​ Instance and we are using ​ Docker ​ for
-            virtualization (only for development )</li>
-          <li>OS preferred is Linux Ubuntu</li>
-
-        </ol>
-
-
-
-        <h1>How are we maintaining security ?</h1>
-        <p>We are storing millions of unstructured data mostly like text image pdfs
-          ...etc
-          Hence ,
-          We are ​ Using ​ asymmetric public-private keys​ provided by PKI (public key
-          infrastructure ) from MSP (Membership service provider ) to encrypt-decrypt
-          stored data. With RSA algorithm
-          Just like SSL we are storing the data and enhancing the security
-          And using blockchain we double up the security as data is stored in encrypted
-          form and linked to each other through hash. Brings immutability</p>
-
-
-
-        <h1>How are we sharing the EHR?</h1>
-        <p>We are providing ​ Controlled Authority t ​ o patient
-          As there is public blockchain
-          So need of mining and all that time consuming tasks is removed
-          Hyperledger fabric provides secure transaction where two peer can
-          communicate with each other without the knowledge of the other peers
-          So patent can initiate transaction through physical process like OTP or QR
-          SCAN
-          And we verify it by private-public key pair just like SSL
-          We are also providing room for researchers where patient can send
-          anonymous data for research in labs and universities
-          As you can see in the fig
-          Among the radiologists pharmacist and other medical practitioners we are
-          also using physical authentication to share EHR or part of EHR</p>
-
-
-
-        <h1>Why Only We (WOW) ?</h1>
-        <p>We are providing a plugin for the peer like hospitals and labs and clinics
-          where every one can easily join our network with authentication (of course )
-          . In there existing infrastructure</p>
-        <ul>
-          <li>HIPAA integration
-            ● HIPAA​ : Acronym that stands for the Health Insurance
-            Portability and Accountability Act, a US law designed to provide
-            privacy standards to protect patients' medical records and other
-            health information provided to health plans, doctors, hospitals
-            and other health care providers</li>
-          <li>User friendly Product.</li>
-          <li>24x7 ChatBot .</li>
-          <li>Connect to Online medical stores.</li>
-          <li>Nearest Hospital/Clinic/Medicose locator.</li>
-          <li>Motification for healthy tips,One Click ambulance .</li>
-          <li>Caretaker & Nurse services.</li>
-          <li>Anonymous data for researchers and students</li>
-        </ul>
-      </div>
-    </div>
+<body class="stackedit">
+  <div class="stackedit__html" style="  background:#7f7f7f;
+  background:rgba(255,255,255,0.8);color: black;">
+    <center>
+      <h1>CBKM</h1>
+       <h3> Consensus Based Knowledge Making </h3>
+    </center>
+    <h1 id="preface">Preface</h1>
+    <p>Before Presenting our Idea or Solution<br>
+      Let me make this thing clear that no system can provide 100% security</p>
+    <p>But we have take this initiative to provide it as best as possible</p>
+    <p>Firstly we all know that :-</p>
+    <ol>
+      <li>
+        <p>Handling Patient’s report is very difficult to manage for example<br>
+          Maintaining long history from different hospitals , medical reports .and even prescriptions</p>
+      </li>
+      <li>
+        <p>It is even more difficult to share this information between different medical practitioners.</p>
+      </li>
+      <li>
+        <p>So we came up with an idea to provide access to all these facilities at one point . our application</p>
+      </li>
+      <li>
+        <p>Via which we have decided to Digitize the Health Record to Electronic Health Record.</p>
+      </li>
+      <li>
+        <p>Which brings ease to manageability and shareability .</p>
+      </li>
+      <li>
+        <p><strong>We believe in making a system for generating trust, when individuals do not already trust each
+            other.</strong></p>
+      </li>
+      <li>
+        <p>So best solution suits to the problem statement is <strong>BlockChain</strong></p>
+      </li>
+    </ol>
+    <h1 id="why-blockchain-">Why BlockChain ?</h1>
+    <p>BlockChain gives power of <strong>Immutability, Transparency, Accountability, Security</strong> of transaction
+      and assets.</p>
+    <p>In our project<br>
+      We are using private blockchain network<br>
+      As we cannot risk keeping the record in public blockchain because anyone can see the transaction . Although the
+      data is Immutable but there will be privacy issues.</p>
+    <p>As BlockChain is <strong>Immutable</strong> therefore explicit tempering cannot be done also the data is
+      cryptographically hashed , linked to each other and stored hence , it’s difficult to decrypt it .</p>
+    <h1 id="why-not-the-cloud-system-">Why not the Cloud System ?</h1>
+    <p>Cloud could have been a better option for the case but since</p>
+    <p>Patient is very sensitive towards his information and avoids sharing its information to anyone .</p>
+    <p>Users generally wish to have <strong>Trusted Authorities</strong> like the government secured services etc ….</p>
+    <p>Centralized third party has always been worse in such cases for which</p>
+    <p>Distributed Ledger Technology can be used as a Solution .</p>
+    <p>But since we are trying to provide the best security service therefore we are combining DLT with BC.</p>
+    <p>Distributed systems are also used in such cases which is why we are using EC2 instance and various **Docker
+      Containers for virtualization only for Development **.</p>
+    <h1 id="how-do-things-work-">How do things work ?</h1>
+    <p>We are using <strong>Hyper-Ledger Fabric</strong> built by Linux foundation .</p>
+    <p>As you can see in the first fig (Hyperledger Infrastructure )<br>
+      We have 4 docker containers</p>
+    <ol>
+      <li>
+        <p><strong>CA Server:</strong> This container provides public and private keys for each user and has a track on
+          the expiration period of these keys .MSP (Membership Service Provider ).</p>
+      </li>
+      <li>
+        <p><strong>Orderer :</strong> this keeps a track of sequence of transaction which is build on KAFKA (it helps in
+          making real time streaming pipelines that are scalable )</p>
+      </li>
+      <li>
+        <p><strong>Peer :</strong> It is a node of a hyperledger network that has its own DataBase. We are using at
+          least 4 peers for development but it can scale as per the requirement.</p>
+      </li>
+      <li>
+        <p>** Couch DB :** it is the Database used by the hyperledger to store unstructured data . And deep down It uses
+          <strong>LevelDB</strong>.</p>
+      </li>
+      <li>
+        <p><strong>Client Peer</strong> is to provide RPC to client request</p>
+      </li>
+      <li>
+        <p><strong>Endorser peer :</strong> It checks the Certificates and details to validate the transaction.</p>
+      </li>
+      <li>
+        <p><strong>Anchor peer:</strong> it is used to receive updates and broadcasts these updates to the other peers
+          in the organization. As Anchor peer is discoverable so we can communicate to other organizations by
+          <strong>GOSSIP protocol</strong>.</p>
+      </li>
+      <li>
+        <p>There are two more folder <strong>Config</strong> folder stores all the channel and peer configuration and
+          <strong>Crypto</strong> folder stores all the crypto material like digital certificates .</p>
+      </li>
+    </ol>
+    <h1 id="tech-stack">Tech-Stack</h1>
+    <p><em>We are have used vast tech-stack and we have divided it into 4 main sections</em></p>
+    <ol>
+      <li>
+        <p>We are using GoLang , as hyperledger fabric is built using it ; for building consensus algorithms.</p>
+      </li>
+      <li>
+        <p>Yamal (yml ) files in config are used to configure channels ,transaction and genesis block.</p>
+      </li>
+      <li>
+        <p>CouchDB &amp; LevelDBare databases and levelDB works on a low level format.</p>
+      </li>
+      <li>
+        <p><strong>Rest Server is used to govern all the processes.</strong></p>
+      </li>
+      <li>
+        <p>We are building it using Nodejs ,with ExpressJS for REST API calls and PassportJS for authentication with
+          aadhar (if possible ) or Phone no. or Google authentication.</p>
+      </li>
+      <li>
+        <p>MongoDB as Database to store various assets .</p>
+      </li>
+      <li>
+        <p>We are also providing report analysis, chatbot and recommendation systems through <strong>ML
+            Services</strong>. For which we are using these displayed libraries</p>
+      </li>
+      <li>
+        <p>Coming to the Front-End part we are providing two endpoints :- website and app.</p>
+      </li>
+      <li>
+        <p>We are Using <strong>React</strong> for faster building and native application<br>
+          HTML CSS JS are basics and cordova/phonegap for android development</p>
+      </li>
+      <li>
+        <p>Hosting is done on ** EC2** Instance and <strong>Docker</strong> for virtualization is being used (only for
+          development ).</p>
+      </li>
+      <li>
+        <p>My Preferred OS is Linux Ubuntu .</p>
+      </li>
+    </ol>
+    <p><code>As we mentioned that we will be providing the best security services but the question arises</code></p>
+    <h1 id="how-are-we-going-to-deliver-the-best-security-">How are we going to deliver the best security ?</h1>
+    <p>We are storing millions of unstructured data mostly like text image pdfs …etc<br>
+      Hence ,<br>
+      We are Using <strong>asymmetric public-private key pairs</strong> provided by PKI (public key infrastructure )
+      from MSP (Membership service provider ) to encrypt-decrypt stored data. With <strong>RSA</strong> algorithm.</p>
+    <p>Just like <strong>SSL</strong>, we too are storing the data and enhancing the security by public-private key
+      pairs.<br>
+      And with the support of blockchain we double the level-up of the security as data is stored in encrypted form and
+      linked to each other through hash which brings immutability.</p>
+    <h1 id="how-are-we-sharing-the-ehr">How are we sharing the EHR?</h1>
+    <p>We are providing Controlled Authority to patient</p>
+    <p>Hyperledger fabric provides secure transaction where two peer can communicate with each other without the
+      knowledge of the other peers</p>
+    <p>So patient can initiate transaction through physical process like OTP or QR SCAN</p>
+    <p>And we verify it by private-public key pair just like SSL</p>
+    <p>We are also providing room for researchers where patients can send anonymous data for research purposes in labs
+      and universities .</p>
+    <p>As you can see in the fig</p>
+    <p>Among the radiologists pharmacist and other medical practitioners we are also using physical authentication to
+      share EHR or part of EHR.</p>
+    <h1 id="why-only-we-wow-">Why Only We (WOW) ?</h1>
+    <p>We are providing a plugin for the peer like hospitals , labs and clinics where everyone can easily be a part of
+      our network with authentication (of course ) . In the existing infrastructure of the organization.</p>
+    <p>We are also Integrating HIPAA which is an acronym that stands for the <strong>Health Insurance Portability and
+        Accountability Act</strong>, a law designed to provide privacy standards to protect patients’ medical records
+      and other health related information provided to health plans, doctors, hospitals and other health care providers
+    </p>
+    <ul>
+      <li>
+        <p>Apart from all this basic functionality we also provide facilities like</p>
+      </li>
+      <li>
+        <p>User friendly Product.</p>
+      </li>
+      <li>
+        <p>24x7 ChatBot .</p>
+      </li>
+      <li>
+        <p>Connect to Online medical stores.</p>
+      </li>
+      <li>
+        <p>Nearest Hospital/Clinic/Medicose locator.</p>
+      </li>
+      <li>
+        <p>Motification for healthy tips,One Click ambulance .</p>
+      </li>
+      <li>
+        <p>Caretaker &amp; Nurse services.</p>
+      </li>
+      <li>
+        <p>Anonymous data for researchers and students.</p>
+      </li>
+      <li>
+        <p>Report Analysis</p>
+      </li>
+    </ul>
+    <br><br><br>
   </div>
-
-
-  <div class="bg-image img2"></div>
-  <div class="bg-image img3"></div>
-  <div class="bg-image img4"></div>
-
-  <div class="bg-image img5"></div>
-  <div class="bg-image img6"></div>
-  <div class="bg-image img7"></div>
-  <div class="bg-image img8"></div>
-
-
-
-
-
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
 </body>
 
 </html>
